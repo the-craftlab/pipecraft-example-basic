@@ -1,6 +1,6 @@
 {
   "ciProvider": "github",
-  "mergeStrategy": "fast-forward",
+  "mergeStrategy": "merge",
   "requireConventionalCommits": true,
   "initialBranch": "develop",
   "finalBranch": "main",
