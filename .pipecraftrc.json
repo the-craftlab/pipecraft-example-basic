@@ -5,43 +5,12 @@
   "initialBranch": "develop",
   "finalBranch": "main",
   "branchFlow": ["develop", "staging", "main"],
-  "autoMerge": {
-    "staging": true,
-    "main": true
-  },
-  "semver": {
-    "bumpRules": {
-      "feat": "minor",
-      "fix": "patch",
-      "breaking": "major"
-    }
-  },
+  "autoPromote": { "staging": true, "main": true },
+  "semver": { "bumpRules": { "feat": "minor", "fix": "patch", "breaking": "major" } },
   "domains": {
-    "frontend": {
-      "paths": ["src/frontend/**"],
-      "description": "Frontend application changes",
-      "test": true,
-      "deployable": true,
-      "remoteTestable": true
-    },
-    "backend": {
-      "paths": ["src/backend/**"],
-      "description": "Backend API changes",
-      "test": true,
-      "deployable": true,
-      "remoteTestable": true
-    },
-    "api": {
-      "paths": ["src/api/**"],
-      "description": "API gateway changes",
-      "test": true,
-      "deployable": true
-    },
-    "shared": {
-      "paths": ["src/shared/**"],
-      "description": "Shared library changes",
-      "test": true,
-      "deployable": false
-    }
+    "frontend": { "paths": ["src/frontend/**"], "description": "Frontend application", "prefixes": ["test", "deploy", "remote-test"] },
+    "backend":  { "paths": ["src/backend/**"],  "description": "Backend API",          "prefixes": ["test", "deploy", "remote-test"] },
+    "api":      { "paths": ["src/api/**"],      "description": "API gateway",          "prefixes": ["test", "deploy"] },
+    "shared":   { "paths": ["src/shared/**"],   "description": "Shared library",       "prefixes": ["test"] }
   }
 }
