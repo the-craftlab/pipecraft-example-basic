@@ -406,6 +406,7 @@ jobs:
           sourceBranch: ${{ github.ref_name }}
           targetBranch: ${{ github.ref_name == 'develop' && 'staging' || 'main' }}
           autoPromote: ${{ (github.ref_name == 'develop' && 'true') || (github.ref_name == 'staging' && 'true') || 'false' }}
+          mergeStrategy: merge
           run_number: ${{ inputs.run_number || github.run_number }}
 
   #=============================================================================
